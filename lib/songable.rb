@@ -11,6 +11,12 @@ module Songable
   end
   def get_lyrics_from_link(url)
     doc = Nokogiri::HTML(open(url))
-    doc.css('p').map(&:content).join(" ")
+    lyrics = doc.css('p>a.referent').each_with_object([]) do |line, ary|
+      line_content = line.content
+      unless line_content.chars.include?('[')
+        ary << line_content
+      end
+    end
+    lyrics.join
   end
 end

@@ -1,3 +1,4 @@
+/*
 var map;
 window.markerPositions = new Array;
 var initMap = function() {
@@ -42,3 +43,4 @@ $(document).ready(function(){
     });
   });
 });
+*/

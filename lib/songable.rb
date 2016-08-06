@@ -17,6 +17,6 @@ module Songable
         ary << line_content
       end
     end
-    lyrics.join
+    lyrics.join("\n")
   end
 end

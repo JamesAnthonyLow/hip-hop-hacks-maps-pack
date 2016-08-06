@@ -80,8 +80,7 @@ module LocationsParser
   def disqualified result
     (result.length == 1) && result.none?(&:location?) || 
       result.all?(&:num?) ||
-      result.any? {|t| has_non_alpha(t) } ||
-      !num_only_in_beginning(result)
+      !num_only_in_beginning(result) 
   end
   def loc_str result
     str = result.map(&:word).join(" ") unless disqualified(result)
